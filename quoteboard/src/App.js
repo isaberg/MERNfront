@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Route, Link} from 'react-router-dom'
 import Dashboard from './components/Dashboard'
 import About from './components/About'
-import Submit from './components/Submit'
+import NewSubmit from './components/NewSubmit'
 import './App.css'
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
         <main>
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/submit" component={Submit} />
+          <Route exact path="/submit" component={NewSubmit} />
         </main>
       </div>
     )

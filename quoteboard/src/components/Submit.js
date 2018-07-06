@@ -45,6 +45,7 @@ class Quote extends Component {
   }
 
   render () {
+    // console.log(props)
     return (
       <div className="form">
       <h1>Add a Quote!</h1>
