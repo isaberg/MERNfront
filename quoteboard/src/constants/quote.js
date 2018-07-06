@@ -1,0 +1,3 @@
+export const CREATE_QUOTE = 'CREATE_QUOTE'
+export const REMOVE_QUOTE = 'REMOVE_QUOTE'
+export const UPDATE_QUOTE = 'UPDATE_QUOTE'

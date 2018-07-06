@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { URL } from "../api.js"
 import axios from 'axios'
-import {
+// import {
   // AxiosProvider,
   // Request,
-  Get,
+  // Get,
   // Delete,
   // Head,
   // Post,
   // Put,
   // Patch,
-  withAxios} from 'react-axios'
+  // withAxios} from 'react-axios'
 
 class Quote extends Component {
   constructor () {
@@ -34,13 +34,9 @@ class Quote extends Component {
 
   submitQuote = (e) => {
     e.preventDefault()
-    const userSubmit = {
-      author: this.state.authorString,
-      quote: this.state.authorQuote
-    }
-    console.log(`axios sends this user: ${userSubmit}`)
+    console.log('axios sends user')
     this.setState({ notification:'Quote submitted! wooohoooo!'})
-    axios.post(URL, { userSubmit })
+    axios.post(URL, { author: this.state.authorString, quote: this.state.quoteString})
     .then(res => {
         console.log(res);
         console.log(res.data);

@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
 import { URL } from "../api.js"
 import axios from 'axios'
-import {
+// import {
   // AxiosProvider,
   // Request,
-  Get,
+  // Get,
   // Delete,
   // Head,
   // Post,
   // Put,
   // Patch,
-  withAxios} from 'react-axios'
+  // withAxios} from 'react-axios'
 
 class Dashboard extends Component {
   constructor() {
     super();
 
     this.state = {
-      quotes: '',
+      quotes: []
     }
   }
 
@@ -25,7 +25,7 @@ class Dashboard extends Component {
     axios.get(URL)
       .then((response) => {
         const quoteData = response.data
-        console.log(response)
+        console.log(quoteData)
         this.setState({quotes: quoteData})
       })
   }
@@ -44,12 +44,12 @@ class Dashboard extends Component {
     console.log(`this is the quotes state: ${this.state.quotes}`)
     const quoteList = this.state.quotes
     // Cannot get the .map functionality to work (error; TypeError: quoteList.map is not a function)
-    // let quoteDisplay = quoteList.map(quote => <li>{quote.author}:{quote.quote}</li>)
+    let quoteDisplay = quoteList.map(quote => <li key={quote._id}>{quote.author} | {quote.quote}</li>)
     // console.log(quoteDisplay)
     return (
       <div>
       <h3> A Board of Quotes </h3>
-      <p>TBD: Quote Board</p>
+      <ul>{quoteDisplay}</ul>
       </div>
     )
   }
